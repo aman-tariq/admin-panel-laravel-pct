@@ -1,0 +1,95 @@
+
+.wrapper .container .show-all-menus-div{
+    margin-top: 60px;
+}
+.wrapper .container .show-all-menus-div .table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.wrapper .container .show-all-menus-div .table thead tr th{
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid #d2d2d2;
+}
+.wrapper .container .show-all-menus-div .table thead tr th:nth-child(1){
+    width: 20%;
+    text-align: center;
+}
+.wrapper .container .show-all-menus-div .table thead tr th:nth-child(2){
+    width: 20%;
+    text-align: center;
+}
+.wrapper .container .show-all-menus-div .table thead tr th:nth-child(3){
+    width: 40%;
+    text-align: center;
+}
+.wrapper .container .show-all-menus-div .table thead tr th:nth-child(4){
+    width: 20%;
+    text-align: center;
+}
+.wrapper .container .show-all-menus-div .table tbody tr td{
+    /* text-align: center; */
+    font-weight: 400;
+    color: rgb(37, 35, 35);
+    border: 1px solid #d2d2d2;
+}
+.wrapper .container .show-all-menus-div .table tbody tr td a{
+    text-decoration: none;
+}
+.bi-trash3{
+    color: red;
+    cursor: pointer;
+    font-size: 20px;
+}
+.bi-pencil-square{
+    color: green;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 7px;
+}
+.switch-container-active{
+    background-color: #20096d;
+    width: 40px;
+    height: 20px;
+    border-radius: 200px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.switch-container-deactive{
+    background-color: #d2d2d2;
+    width: 40px;
+    height: 20px;
+    border-radius: 200px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.switch-container-deactive .toggle-switch{
+    background-color: #fff;
+    width: 18px;
+    height: 17px;
+    border-radius: 200px;
+    transition: 0.2s;
+    margin: 2px;
+    position: relative;
+    display: flex;
+    bottom: 1px;
+    transform: translateX(18px);
+}
+.switch-container-active .toggle-switch{
+    background-color: #fff;
+    width: 18px;
+    height: 17px;
+    border-radius: 200px;
+    transition: 0.2s;
+    margin: 2px;
+    position: relative;
+    display: flex;
+    bottom: 1px;
+    transform: translateX(18px);
+}
+.switch-container-deactive span.deactive{
+    background-color: #fff;
+    transform: translateX(0px);
+} 
