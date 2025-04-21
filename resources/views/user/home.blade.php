@@ -17,12 +17,15 @@
             <a class="navbar-brand" href="/">My Website</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
-                    </li>
+                    @php
+                        $controller = app(\App\Http\Controllers\user\UserController::class);
+                        $userMenus = $controller->getUserMenu();
+                    @endphp
+                    @foreach ($userMenus as $menu)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url($menu->url) }}">{{ $menu->title }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

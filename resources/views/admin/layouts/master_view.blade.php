@@ -93,14 +93,14 @@
                                 <li>
                                     <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Career Leads</span></a>
                                     <ul aria-expanded="false">
-                                        <li><a href="/admin/leads/career">View Career Leads</a></li>
+                                        <li><a href="{{ route('admin.careers.index')}}">View Career Leads</a></li>
                                     </ul>
                                 </li> 
                                 <li class="nav-label">Customers</li>
                                 <li>
                                     <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">All Customers</span></a>
                                     <ul aria-expanded="false">
-                                        <li><a href="/admin/customers/view-manage">View/Manage Customers</a></li>
+                                        <li><a href="fhfg">View/Manage Customers</a></li>
                                     </ul>
                                 </li> 
                                 <li class="nav-label">Header</li>
@@ -113,8 +113,7 @@
                                 <li>
                                     <a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="icon icon-single-04"></i><span class="nav-text">Main menu</span></a>
                                     <ul aria-expanded="false">
-                                        <li><a href="/admin/menu/add-menu">View/Add Menu</a></li>
-                                        <li><a href="/admin/menu/add-about-content">View/Add About Content</a></li>
+                                        <li><a href="{{ route('admin.menus.manage')}}">View/Add Menu</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-label">Homepage</li>

@@ -1,7 +1,8 @@
 <?php
+
 namespace App\Http\Controllers\admin;
 
-use App\Models\Contact;
+use App\Models\admin\AdminAccountContacts;
 use Illuminate\Http\Request;
 
 class AdminContactController extends AdminBaseController
@@ -12,8 +13,11 @@ class AdminContactController extends AdminBaseController
         if ($redirect) {
             return $redirect;
         }
-        $contacts = Contact::all();
-        return view('admin.contacts.index', compact('contacts'));
+
+        // Get all contacts from the database
+        $contacts = AdminAccountContacts::all();
+
+        return view('admin.contacts.index', compact('contacts'));  // Use the correct variable name here
     }
 
     public function update(Request $request, $id)
@@ -22,14 +26,18 @@ class AdminContactController extends AdminBaseController
         if ($redirect) {
             return $redirect;
         }
+
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
             'phone' => 'nullable|string',
             'message' => 'nullable|string',
         ]);
-        $contact = Contact::findOrFail($id);
+
+        // Find the contact by ID and update it
+        $contact = AdminAccountContacts::findOrFail($id);
         $contact->update($request->all());
+
         return redirect()->route('admin.contacts.index')->with('success', 'Contact lead updated successfully!');
     }
 
@@ -39,8 +47,11 @@ class AdminContactController extends AdminBaseController
         if ($redirect) {
             return $redirect;
         }
-        $contact = Contact::findOrFail($id);
+
+        // Find the contact by ID and delete it
+        $contact = AdminAccountContacts::findOrFail($id);
         $contact->delete();
+
         return redirect()->route('admin.contacts.index')->with('success', 'Contact deleted successfully!');
     }
 }

@@ -17,12 +17,15 @@
             <a class="navbar-brand" href="/">My Website</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact Us</a>
-                    </li>
+                    @php
+                        $controller = app(\App\Http\Controllers\user\UserController::class);
+                        $userMenus = $controller->getUserMenu();
+                    @endphp
+                    @foreach ($userMenus as $menu)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url($menu->url) }}">{{ $menu->title }}</a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -33,7 +36,7 @@
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
-        <form action="{{ url('/contact') }}" method="POST">
+        <form method="POST" action="/contact">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -45,11 +48,11 @@
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone</label>
-                <input type="text" class="form-control" id="phone" name="phone">
+                <input type="text" class="form-control" id="phone" name="phone" required>
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
